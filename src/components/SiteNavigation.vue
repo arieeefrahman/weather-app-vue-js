@@ -81,8 +81,8 @@ const addCity = () => {
 
     const locationObj = {
         id: uid(),
-        state: route.params.state,
-        city: route.params.city,
+        state: route.params.state.replace(/_/g, " "),
+        city: route.params.city.replace(/_/g, " "),
         coordinates: {
             lat: route.query.lat,
             lng: route.query.lng,

@@ -6,7 +6,7 @@
         </div>
         <!-- Weather Overview -->
          <div class="flex flex-col items-center text-white py-12">
-            <h1 class="text-5xl mb-2 font-bold"> {{ route.params.city }}</h1>
+            <h1 class="text-5xl mb-2 font-bold"> {{ route.params.city.replace(/_/g, " ") }}</h1>
             <p class="text-base mb-12">
                 {{
                     new Date(weatherData.currentTime).toLocaleDateString(
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-2 my-12 p-4 text-white cursor-pointer duration-150 bg-red-600 hover:bg-red-700 rounded-md" @click="removeCity">
+        <div v-if="!route.query.preview" class="flex items-center gap-2 my-12 p-4 text-white cursor-pointer duration-150 bg-red-600 hover:bg-red-700 rounded-md" @click="removeCity">
             <i class="fa-solid fa-trash"></i>
             <p>Remove City</p>
         </div>
