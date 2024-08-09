@@ -65,13 +65,13 @@ import { uid } from 'uid';
 const route = useRoute();
 const router = useRouter();
 
-
 const modalActive = ref(null);
 const toggleModal = () => {
     modalActive.value = !modalActive.value;
 };
 
 const savedCities = ref([]);
+
 const addCity = () => {
     if (localStorage.getItem('savedCities')) {
         savedCities.value = JSON.parse(
@@ -89,13 +89,35 @@ const addCity = () => {
         },
     };
 
-    savedCities.value.push(locationObj);
-    localStorage.setItem('savedCities', JSON.stringify(savedCities.value));
+    // Check if the city already exists in the savedCities array
+    const existingCity = savedCities.value.find(city => 
+        city.state === locationObj.state && 
+        city.city === locationObj.city
+    );
 
-    let query = Object.assign({}, route.query);
-    delete query.preview;
-    query.id = locationObj.id;
-    router.replace({ query });
+    if (existingCity) {
+        // Redirect to the existing city if found
+        router.push({
+            name: "cityView",
+            params: {
+                state: existingCity.state,
+                city: existingCity.city,
+            },
+            query: {
+                id: existingCity.id,
+                lat: existingCity.coordinates.lat,
+                lng: existingCity.coordinates.lng,
+            },
+        });
+    } else {
+        // If city doesn't exist, add it to the savedCities
+        savedCities.value.push(locationObj);
+        localStorage.setItem('savedCities', JSON.stringify(savedCities.value));
+
+        let query = Object.assign({}, route.query);
+        delete query.preview;
+        query.id = locationObj.id;
+        router.replace({ query });
+    }
 };
-
 </script>
