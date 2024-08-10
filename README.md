@@ -1,14 +1,16 @@
 # weather-app
 
-This application called "Weather" allows you to track the current and future weather of cities of your choosing.
+This application, called "Weather", allows you to track the current and future weather of cities of your choice.
 
-## Recommended IDE Setup
+## How It Works?
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+<li>Search for your city by typing its name into the search field.</li>
+<li>Choose a city from the list of results to view the current weather in that location.</li>
+<li>Click the "+" symbol in the upper right corner to track the city. This will save the city to the home page for later viewing. </li>
 
-## Customize configuration
+## Removing a City
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+You may easily remove a city from your tracking list by selecting it directly from the homepage. There will be an option to remove the city at the bottom of the page.
 
 ## Environment Variables
 
