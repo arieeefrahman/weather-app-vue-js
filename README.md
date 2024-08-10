@@ -2,6 +2,10 @@
 
 This application, called "Weather", allows you to track the current and future weather of cities of your choice.
 
+## Live Demo
+
+You can access the live version of the application at the following URL: [Weather App](https://weather-app-vue-arieeefrahman.netlify.app/)
+
 ## How It Works?
 
 <li>Search for your city by typing its name into the search field.</li>
