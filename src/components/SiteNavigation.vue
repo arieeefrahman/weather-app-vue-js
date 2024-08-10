@@ -30,25 +30,26 @@
                     <h2 class="text-2xl flex justify-center">HOW IT WORKS?</h2>
                     <ol class="list-decimal list-inside mb-4">
                         <li>
-                        Search for your city by entering the name into the
-                        search bar.
+                            Search for your city by typing its name into 
+                            the search field.
                         </li>
                         <li>
-                        Select a city within the results, this will take
-                        you to the current weather for your selection.
+                            Choose a city from the list of results to view 
+                            the current weather in that location.
                         </li>
                         <li>
-                        Track the city by clicking on the "+" icon in the
-                        top right. This will save the city to view at a
-                        later time on the home page.
+                            Click the "+" symbol in the upper right corner 
+                            to follow the city. This will save the city to 
+                            the home page for later viewing.
                         </li>
                     </ol>
 
                     <h2 class="text-2xl flex justify-center">REMOVING A CITY</h2>
                     <p>
-                        If you no longer wish to track a city, simply select
-                        the city within the home page. At the bottom of the
-                        page, there will be am option to delete the city.
+                        You may easily remove a city from your tracking 
+                        list by selecting it directly from the homepage. 
+                        There will be an option to remove the city at the 
+                        bottom of the page.
                     </p>
                 </div>
             </BaseModal>
